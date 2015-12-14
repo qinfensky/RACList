@@ -43,6 +43,17 @@
         NSLog(@"key is %@, value is %@", x[0], x[1]);
     }];
     
+    
+    // 映射数组
+    // map:映射的意思，目的：把原始值value映射成一个新值
+    // array: 把集合转换成数组
+    // 底层实现：当信号被订阅，会遍历集合中的原始值，映射成新值，并且保存到新的数组里。
+    NSArray *array1 = [[arry.rac_sequence map:^id(id value) {
+        NSLog(@"===================");
+        return value;
+    }] array];
+    
+    NSLog(@"array1 is %@", array1);
 }
 
 - (IBAction)aaaa:(id)sender {
