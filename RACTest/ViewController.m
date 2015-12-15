@@ -4,7 +4,7 @@
 //
 //  Created by qinfensky on 15/12/13.
 //  Copyright © 2015年 qinfensky. All rights reserved.
-//
+//  ReactiveCocoa 使用
 
 
 #import "ViewController.h"
@@ -112,21 +112,21 @@
     // 1.调用subscribeNext订阅信号，只是把订阅者保存起来，并且订阅者的nextBlock已经赋值了。
     // 2.调用sendNext发送信号，遍历刚刚保存的所有订阅者，一个一个调用订阅者的nextBlock。
     
-//    // 1.创建信号
-//    RACSubject *subject = [RACSubject subject];
-//    
-//    // 2.订阅信号
-//    [subject subscribeNext:^(id x) {
-//        // block调用时刻：当信号发出新值，就会调用.
-//        NSLog(@"第一个订阅者%@",x);
-//    }];
-//    [subject subscribeNext:^(id x) {
-//        // block调用时刻：当信号发出新值，就会调用.
-//        NSLog(@"第二个订阅者%@",x);
-//    }];
-//    
-//    // 3.发送信号
-//    [subject sendNext:@"1"];
+    // 1.创建信号
+    RACSubject *subject = [RACSubject subject];
+    
+    // 2.订阅信号
+    [subject subscribeNext:^(id x) {
+        // block调用时刻：当信号发出新值，就会调用.
+        NSLog(@"第一个订阅者%@",x);
+    }];
+    [subject subscribeNext:^(id x) {
+        // block调用时刻：当信号发出新值，就会调用.
+        NSLog(@"第二个订阅者%@",x);
+    }];
+    
+    // 3.发送信号
+    [subject sendNext:@"1"];
     
     
     // RACReplaySubject使用步骤:
